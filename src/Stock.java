@@ -2,10 +2,12 @@ public class Stock {
     private final String ticket;
     private double price;
     private double volotility;
+    private double initialPrice;
 
     public Stock(String ticket, double price, double volotility) {
         this.ticket = ticket;
         this.price = price;
+        this.initialPrice = price;
         this.volotility = volotility;
     }
 
@@ -25,5 +27,13 @@ public class Stock {
 
     public synchronized double getPrice() {
         return price;
+    }
+
+    public synchronized double getProfitLoss(){
+        return price- initialPrice;
+    }
+
+    public double getInitialPrice() {
+        return initialPrice;
     }
 }

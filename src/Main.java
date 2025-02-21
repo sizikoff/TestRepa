@@ -33,6 +33,15 @@ public class Main {
         scanner.nextLine();
         executor.shutdownNow();
         System.out.println("Симуляция завершена");
+
+        System.out.println("\nРезультаты торговли:");
+        double totalProfitLoss = 0;
+        for (Stock stock:stocks){
+            double profitLoss = stock.getProfitLoss();
+            totalProfitLoss+=profitLoss;
+            System.out.printf("Акция %s: начальная цена: %.2f,конечная цена: %.2f,изменение:%.2f\n",stock.getTicket(),stock.getInitialPrice(),stock.getPrice(),profitLoss);
+            System.out.printf("Общий результат:%.2f\n",totalProfitLoss);
+        }
     }
 }
 

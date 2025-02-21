@@ -33,11 +33,12 @@ public class NewsGenerator implements Runnable{
                     news = new News(description,impact);
                 }else{
                     double impact = (random.nextDouble()*2-1);
-                    String description = stock.getTicket()+": "+neutralPhrases[random.nextInt(neutralPhrases.length)];
+                    String description = stock.getTicket()+": "+neutralPhrases[random.nextInt(neutralPhrases
+                            .length)];
                     news = new News(description,impact);
 
                     stock.applyNewsImpact(news.getImpact());
-                    System.out.println("ВНИМАНИЕ НОВОСТИ "+news.getDescription()+"с воздействием "+news.getImpact());
+                    System.out.println("ВНИМАНИЕ НОВОСТИ "+news.getDescription()+" с воздействием "+news.getImpact());
                 }
             }catch (InterruptedException e){
                 Thread.currentThread().interrupt();
