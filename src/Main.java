@@ -39,9 +39,10 @@ public class Main {
         for (Stock stock:stocks){
             double profitLoss = stock.getProfitLoss();
             totalProfitLoss+=profitLoss;
-            System.out.printf("Акция %s: начальная цена: %.2f,конечная цена: %.2f,изменение:%.2f\n",stock.getTicket(),stock.getInitialPrice(),stock.getPrice(),profitLoss);
-            System.out.printf("Общий результат:%.2f\n",totalProfitLoss);
+            System.out.printf("\nАкция %s: начальная цена: %.2f,конечная цена: %.2f,изменение:%.2f\n",stock.getTicket(),stock.getInitialPrice(),stock.getPrice(),profitLoss);
+            System.out.printf("%.2f",profitLoss);
         }
+        System.out.printf("\nОбщий результат:%.2f\n",totalProfitLoss);
     }
 }
 
